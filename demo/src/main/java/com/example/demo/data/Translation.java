@@ -26,15 +26,22 @@ public class Translation {
         this.originalMessage = originalMessage;
         this.translatedMessage = translatedMessage;
     }
-
-    //Getters and setters
-
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Translation{" +
+                "id=" + id +
+                ", language='" + language + '\'' +
+                ", originalMessage='" + originalMessage + '\'' +
+                ", translatedMessage='" + translatedMessage + '\'' +
+                '}';
     }
 
     public String getLanguage() {
