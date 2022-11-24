@@ -1,18 +1,15 @@
 package com.example.demo.data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "translation")
 public class Translation {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column(name = "language")
-    private String language;
+    @Column(name = "languageName")
+    private String languageName;
     @Column(name = "original_message")
     private String originalMessage;
     @Column(name = "translated_message")
@@ -20,9 +17,9 @@ public class Translation {
     public Translation() {
     }
 
-    public Translation(Integer id, String language, String originalMessage, String translatedMessage) {
+    public Translation(Integer id, String languageName, String originalMessage, String translatedMessage) {
         this.id = id;
-        this.language = language;
+        this.languageName = languageName;
         this.originalMessage = originalMessage;
         this.translatedMessage = translatedMessage;
     }
@@ -38,18 +35,18 @@ public class Translation {
     public String toString() {
         return "Translation{" +
                 "id=" + id +
-                ", language='" + language + '\'' +
+                ", language='" + languageName + '\'' +
                 ", originalMessage='" + originalMessage + '\'' +
                 ", translatedMessage='" + translatedMessage + '\'' +
                 '}';
     }
 
-    public String getLanguage() {
-        return language;
+    public String getLanguageName() {
+        return languageName;
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
+    public void setLanguageName(String languageName) {
+        this.languageName = languageName;
     }
 
     public String getOriginalMessage() {

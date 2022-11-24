@@ -1,7 +1,11 @@
 package com.example.demo.repository;
 
 import com.example.demo.data.Translation;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface TranslationRepository extends CrudRepository<Translation, Integer> {
+@Repository
+public interface TranslationRepository extends JpaRepository<Translation, Integer> {
+    Translation findByLanguageNameAndOriginalMessage(String languageName,String originalMessage);
+
 }
